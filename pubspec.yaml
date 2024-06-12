@@ -76,6 +76,13 @@ flutter:
     - assets/images/Hive Icon TP.png
     - assets/images/Hive Icon 2.png
     - assets/images/Hive OF Logo 2.png
+    - assets/images/collaborate.png
+    - assets/images/share.png
+    - assets/images/settings.png
+    - assets/images/business_agreement.png
+    - assets/images/hive_logo.png
+    - assets/images/chat_message_blue_speech_bubble_icon_with_bell_notification_alert_notice_reminder_symbol_conversation_button_icon_or_symbol_background_3_dillustration.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
