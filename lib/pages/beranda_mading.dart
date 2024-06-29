@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LandingPage extends StatelessWidget {
+class BerandaMading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -217,7 +217,6 @@ class LandingPage extends StatelessWidget {
                                         child: SizedBox(
                                           width: 104,
                                           height: 104,
-                                          child: SvgPicture.asset(),
                                         ),
                                       ),
                                       Expanded(
@@ -340,10 +339,6 @@ class LandingPage extends StatelessWidget {
                                         child: SizedBox(
                                           width: 104,
                                           height: 104,
-                                          child: SvgPicture.asset(
-                                            'assets/images/union_2.jpeg.jpeg',
-                                            'assets/vectors/union_7_x2.svg',
-                                          ),
                                         ),
                                       ),
                                       Expanded(
@@ -452,10 +447,6 @@ class LandingPage extends StatelessWidget {
                                       child: SizedBox(
                                         width: 104,
                                         height: 104,
-                                        child: SvgPicture.asset(
-                                          'assets/images/union.jpeg.jpeg',
-                                          'assets/vectors/union_1.jpeg',
-                                        ),
                                       ),
                                     ),
                                     Expanded(
@@ -639,10 +630,6 @@ class LandingPage extends StatelessWidget {
                                         child: SizedBox(
                                           width: 104,
                                           height: 104,
-                                          child: SvgPicture.asset(
-                                            'assets/images/union_1.jpeg.jpeg',
-                                            'assets/vectors/union_6_x2.svg',
-                                          ),
                                         ),
                                       ),
                                       Expanded(
@@ -765,10 +752,6 @@ class LandingPage extends StatelessWidget {
                                         child: SizedBox(
                                           width: 104,
                                           height: 104,
-                                          child: SvgPicture.asset(
-                                            'assets/images/union_2.jpeg.jpeg',
-                                            'assets/vectors/union_9_x2.svg',
-                                          ),
                                         ),
                                       ),
                                       Expanded(
@@ -877,10 +860,6 @@ class LandingPage extends StatelessWidget {
                                       child: SizedBox(
                                         width: 104,
                                         height: 104,
-                                        child: SvgPicture.asset(
-                                          'assets/images/union.jpeg.jpeg',
-                                          'assets/vectors/union_4_x2.svg',
-                                        ),
                                       ),
                                     ),
                                     Expanded(
