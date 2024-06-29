@@ -5,8 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class Notifikasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return 
-    Container(
+    return Container(
       decoration: BoxDecoration(
         color: Color(0xFFFFFFFF),
       ),
@@ -27,7 +26,7 @@ class Notifikasi extends StatelessWidget {
               ),
             ),
           ),
-    Stack(
+          Stack(
             children: [
               SizedBox(
                 width: double.infinity,
