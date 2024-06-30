@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_hive/pages/login_page.dart';
+import 'package:mobile_hive/pages/register_page.dart';
 
 class PopUpDaftarPage extends StatelessWidget {
   const PopUpDaftarPage({Key? key}) : super(key: key);
@@ -100,7 +102,10 @@ class PopUpDaftarPage extends StatelessWidget {
                     IntrinsicWidth(
                       child: TextButton(
                         onPressed: () {
-                          // Function for "Masuk Sekarang"
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()));
                         },
                         child: Text(
                           'Masuk Sekarang',
@@ -125,7 +130,10 @@ class PopUpDaftarPage extends StatelessWidget {
                     IntrinsicWidth(
                       child: TextButton(
                         onPressed: () {
-                          // Function for "Daftar Sekarang"
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterPage()));
                         },
                         child: Text(
                           '+Daftar Sekarang',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_hive/pages/popUpDaftar_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -39,6 +40,7 @@ class LoginPage extends StatelessWidget {
                         EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                   ),
                   style: TextStyle(color: Colors.grey, fontSize: 13.0),
+                  obscureText: true,
                 ),
                 SizedBox(height: 13),
                 Row(
@@ -74,6 +76,32 @@ class LoginPage extends StatelessWidget {
                     child: Text('Masuk'),
                   ),
                 ),
+                SizedBox(height: 13),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Belum punya akun?',
+                      style: TextStyle(color: Colors.grey, fontSize: 14.0),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PopUpDaftarPage()));
+                      },
+                      child: Text(
+                        'Daftar',
+                        style: TextStyle(
+                            color: Colors.yellow.shade600,
+                            fontSize: 14.0,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Color(0xFFF7CA33)),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),

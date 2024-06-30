@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "802217234173",
+    "project_id": "mobile-hive-firebase",
+    "storage_bucket": "mobile-hive-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802217234173:android:f1e69df4b509fdefea7894",
+        "android_client_info": {
+          "package_name": "com.example.hive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrYv8MFPxEAqiAmyg9oT1kq2se2wb2Sxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802217234173:android:a6f186d8dce9d5feea7894",
+        "android_client_info": {
+          "package_name": "com.example.mobile_hive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrYv8MFPxEAqiAmyg9oT1kq2se2wb2Sxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

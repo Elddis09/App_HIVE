@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_hive/pages/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -176,6 +177,30 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   child: Text('Daftar'),
                 ),
+              ),
+              SizedBox(height: 13),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sudah punya akun?',
+                    style: TextStyle(color: Colors.grey, fontSize: 14.0),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
+                    child: Text(
+                      'Masuk',
+                      style: TextStyle(
+                          color: Colors.yellow.shade600,
+                          fontSize: 14.0,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Color(0xFFF7CA33)),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
