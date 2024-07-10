@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:mobile_hive/pages/news_page.dart';
 import 'package:mobile_hive/pages/popUpDaftar_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -67,7 +69,11 @@ class LoginPage extends StatelessWidget {
                   height: 45,
                   child: ElevatedButton(
                     onPressed: () {
-                      print('Login');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => NewsPage(),
+                          ));
                     },
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,

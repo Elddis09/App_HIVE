@@ -95,6 +95,8 @@ flutter:
     - assets/images/settings.png
     - assets/images/business_agreement.png
     - assets/images/hive_logo.png
+    - assets/images/img_newsflash.jpeg
+    - assets/images/img_newsflash2.jpeg
     - assets/images/chat_message_blue_speech_bubble_icon_with_bell_notification_alert_notice_reminder_symbol_conversation_button_icon_or_symbol_background_3_dillustration.png
 
   #   - images/a_dot_ham.jpeg
