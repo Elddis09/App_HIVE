@@ -53,11 +53,105 @@ class BerandaMading extends StatelessWidget {
               icon: Icon(Icons.notifications, color: Colors.black),
               onPressed: () {},
             ),
-            IconButton(
-              icon: Icon(Icons.menu, color: Colors.black),
-              onPressed: () {},
+            Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon: Icon(Icons.menu, color: Colors.black),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                );
+              },
             ),
           ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Image.asset(
+                        'assets/images/hive_logo.png', // Replace with your logo
+                        height: 50,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: IconButton(
+                        icon: Icon(Icons.close),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                title: Text('Profile'),
+                onTap: () {
+                  // Handle navigation to Profile
+                },
+              ),
+              ListTile(
+                title: Text('Notifikasi'),
+                onTap: () {
+                  // Handle navigation to Notifikasi
+                },
+              ),
+              ListTile(
+                title: Text('Saluran'),
+                onTap: () {
+                  // Handle navigation to Saluran
+                },
+              ),
+              ListTile(
+                title: Text('Teman'),
+                onTap: () {
+                  // Handle navigation to Teman
+                },
+              ),
+              ListTile(
+                title: Text('Kotak Saran'),
+                onTap: () {
+                  // Handle navigation to Kotak Saran
+                },
+              ),
+              ListTile(
+                title: Text('Keluar'),
+                onTap: () {
+                  // Handle logout
+                },
+              ),
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.facebook),
+                      onPressed: () {
+                        // Handle Facebook link
+                      },
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.favorite),
+                      onPressed: () {
+                        // Handle Instagram link
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
         body: SingleChildScrollView(
           child:
