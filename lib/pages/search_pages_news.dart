@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_hive/components/news.dart';
+//import 'package:mobile_hive/components/news.dart';
 import 'package:mobile_hive/provider/news.provider.dart';
 import 'package:provider/provider.dart';
 
