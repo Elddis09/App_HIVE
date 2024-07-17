@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
-import 'package:mobile_hive/components/news.dart';
+//import 'package:mobile_hive/components/news.dart';
 import 'package:mobile_hive/pages/search_pages_news.dart';
 import 'package:mobile_hive/provider/news.provider.dart';
 import 'package:provider/provider.dart';
