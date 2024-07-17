@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:mobile_hive/pages/beranda_mading.dart';
-import 'package:mobile_hive/pages/tambah_content_page.dart';
+//import 'package:mobile_hive/pages/beranda_mading.dart';
+import 'package:mobile_hive/pages/profill_atampilan.dart';
+//import 'package:mobile_hive/pages/profill_atampilan.dart';
+//import 'package:mobile_hive/pages/side_bar.dart';
+//import 'package:mobile_hive/pages/beranda_mading.dart';
+//import 'package:mobile_hive/pages/profill_atampilan.dart';
+//import 'package:mobile_hive/pages/profill_bsetting.dart';
+//import 'package:mobile_hive/pages/tambah_content_page.dart';
 import 'package:mobile_hive/provider/news.provider.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
@@ -25,7 +31,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: PostContentPage(),
+        home:ProfillAtampilan(),
       ),
     );
   }
