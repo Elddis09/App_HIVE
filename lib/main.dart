@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:mobile_hive/pages/teman.dart';
+//import 'package:mobile_hive/pages/kotak_saran.dart';
+//import 'package:mobile_hive/pages/saluran.dart';
+//import 'package:mobile_hive/pages/notifikasi.dart';
+//import 'package:mobile_hive/pages/profill_atampilan.dart';
+//import 'package:mobile_hive/pages/notifikasi.dart';
+//import 'package:mobile_hive/pages/profill_atampilan.dart';
+//import 'package:mobile_hive/pages/KeteranganSaluran.dart';
 //import 'package:mobile_hive/pages/laman_saluran.dart';
-import 'package:mobile_hive/pages/saluran.dart';
+//import 'package:mobile_hive/pages/profill_atampilan.dart';
+//import 'package:mobile_hive/pages/laman_saluran.dart';
+//import 'package:mobile_hive/pages/saluran.dart';
 //import 'package:mobile_hive/pages/beranda_mading.dart';
 //import 'package:mobile_hive/pages/profill_atampilan.dart';
 //import 'package:mobile_hive/pages/saluran.dart';
@@ -34,7 +44,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Saluran(),
+        home: FriendshipScreen(),
       ),
     );
   }
