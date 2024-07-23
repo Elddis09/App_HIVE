@@ -1,1972 +1,495 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Saluran extends StatelessWidget {
+class Saluran extends StatefulWidget {
+  @override
+  _SaluranState createState() => _SaluranState();
+}
+
+class _SaluranState extends State<Saluran> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isNotificationEnabled = false;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color(0xFFFFFFFF),
+    return Scaffold(
+      key: _scaffoldKey,
+      appBar: AppBar(
+        title: Text('Saluran',
+            style: GoogleFonts.inter(fontWeight: FontWeight.w500)),
+        backgroundColor: Color(0xFFFFD700),
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.menu, color: Colors.black),
+          onPressed: () {
+            _scaffoldKey.currentState!.openDrawer();
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              isNotificationEnabled
+                  ? Icons.notifications
+                  : Icons.notifications_off,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              _handleNotifications(context);
+            },
+          ),
+          SizedBox(width: 16),
+        ],
       ),
-      child: Stack(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Image.asset(
+                        'assets/images/hive_logo.png', // Replace with your logo
+                        height: 50,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      icon: Icon(Icons.close),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              title: Text('Profile'),
+              onTap: () {
+                // Handle navigation to Profile
+              },
+            ),
+            ListTile(
+              title: Text('Notifikasi'),
+              onTap: () {
+                // Handle navigation to Notifikasi
+              },
+            ),
+            ListTile(
+              title: Text('Saluran'),
+              onTap: () {
+                // Handle navigation to Saluran
+              },
+            ),
+            ListTile(
+              title: Text('Teman'),
+              onTap: () {
+                // Handle navigation to Teman
+              },
+            ),
+            ListTile(
+              title: Text('Kotak Saran'),
+              onTap: () {
+                // Handle navigation to Kotak Saran
+              },
+            ),
+            ListTile(
+              title: Text('Keluar'),
+              onTap: () {
+                // Handle logout
+              },
+            ),
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.facebook),
+                    onPressed: () {
+                      // Handle Facebook link
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.favorite),
+                    onPressed: () {
+                      // Handle Instagram link
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: ListView(
         children: [
-          Positioned(
-            left: -27,
-            right: -28,
-            top: -22,
-            bottom: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-              ),
-              child: SizedBox(
-                width: 360,
-                height: 640,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(16, 0, 17, 48.9),
-                  child: Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Positioned(
-                        left: -387,
-                        top: -602,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xFFF3F2F0),
-                          ),
-                          child: Container(
-                            width: 360,
-                            height: 640,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Color(0xFFFFFFFF),
-                              ),
-                              child: Container(
-                                width: 360,
-                                height: 640,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 0, 17.7),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 11.1),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Color(0xFFFBBC05)),
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          color: Color(0xFFFFFFFF),
-                                        ),
-                                        child: Container(
-                                          padding: EdgeInsets.fromLTRB(
-                                              8.5, 7.7, 7.7, 8.5),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0, 2.6),
-                                                child: SizedBox(
-                                                  width: 74.1,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 2.6, 5.1, 0),
-                                                        child: Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0xFFFFE598),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        31.1),
-                                                          ),
-                                                          child: Container(
-                                                            width: 62.2,
-                                                            height: 62.2,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 0, 0, 57.9),
-                                                        child: SizedBox(
-                                                          width: 6.8,
-                                                          height: 6.8,
-                                                          child:
-                                                              SvgPicture.asset(
-                                                            'assets/vectors/vector_23_x2.svg',
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    9.4, 0, 10.2, 0),
-                                                child: Text(
-                                                  'Nama Saluran',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: Color(0xFF000000),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0.9, 4.8),
-                                                child: Align(
-                                                  alignment:
-                                                      Alignment.topCenter,
-                                                  child: Text(
-                                                    'Status',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 7,
-                                                      color: Color(0xFF6D6D6D),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF7D63A),
-                                                  borderRadius:
-                                                      BorderRadius.circular(85),
-                                                ),
-                                                child: Container(
-                                                  width: 86,
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      0.9, 4.3, 0, 3.3),
-                                                  child: Text(
-                                                    'Gabung',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 10,
-                                                      color: Color(0xFFFFFFFF),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Color(0xFFFBBC05)),
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          color: Color(0xFFFFFFFF),
-                                        ),
-                                        child: Container(
-                                          padding: EdgeInsets.fromLTRB(
-                                              8.5, 7.7, 7.7, 8.5),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0, 2.6),
-                                                child: SizedBox(
-                                                  width: 74.1,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 2.6, 5.1, 0),
-                                                        child: Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0xFFFFE598),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        31.1),
-                                                          ),
-                                                          child: Container(
-                                                            width: 62.2,
-                                                            height: 62.2,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 0, 0, 57.9),
-                                                        child: SizedBox(
-                                                          width: 6.8,
-                                                          height: 6.8,
-                                                          child:
-                                                              SvgPicture.asset(
-                                                            'assets/vectors/vector_21_x2.svg',
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    9.4, 0, 10.2, 0),
-                                                child: Text(
-                                                  'Nama Saluran',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: Color(0xFF000000),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0.9, 4.8),
-                                                child: Align(
-                                                  alignment:
-                                                      Alignment.topCenter,
-                                                  child: Text(
-                                                    'Status',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 7,
-                                                      color: Color(0xFF6D6D6D),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF7D63A),
-                                                  borderRadius:
-                                                      BorderRadius.circular(85),
-                                                ),
-                                                child: Container(
-                                                  width: 86,
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      0.9, 4.3, 0, 3.3),
-                                                  child: Text(
-                                                    'Gabung',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 10,
-                                                      color: Color(0xFFFFFFFF),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFFFFFFF),
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                        child: SizedBox(
-                                          width: 102.2,
-                                          child: Container(
-                                            padding: EdgeInsets.fromLTRB(
-                                                0, 74.9, 0, 28.8),
-                                            child: Stack(
-                                              clipBehavior: Clip.none,
-                                              children: [
-                                                Positioned(
-                                                  right: 19.6,
-                                                  top: 10.2,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFFFE598),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              31.1),
-                                                    ),
-                                                    child: Container(
-                                                      width: 62.2,
-                                                      height: 62.2,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'Nama Pengguna',
-                                                  textAlign: TextAlign.center,
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: Color(0xFF000000),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  bottom: 32.9,
-                                                  child: SizedBox(
-                                                    height: 8,
-                                                    child: Text(
-                                                      'Status',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 7,
-                                                        color:
-                                                            Color(0xFF6D6D6D),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  right: 7.7,
-                                                  bottom: 8.5,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFF7D63A),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              85),
-                                                    ),
-                                                    child: Container(
-                                                      width: 86,
-                                                      height: 19.6,
-                                                      padding:
-                                                          EdgeInsets.fromLTRB(
-                                                              0.9, 4.3, 0, 3.3),
-                                                      child: Text(
-                                                        'Follow',
-                                                        style:
-                                                            GoogleFonts.getFont(
-                                                          'Inter',
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontSize: 10,
-                                                          color:
-                                                              Color(0xFFFFFFFF),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  bottom: 0,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: Color(
-                                                              0xFFFBBC05)),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15),
-                                                      color: Color(0xFFFFFFFF),
-                                                    ),
-                                                    child: SizedBox(
-                                                      width: 102.2,
-                                                      height: 127.7,
-                                                      child: Container(
-                                                        padding:
-                                                            EdgeInsets.fromLTRB(
-                                                                8.5,
-                                                                7.7,
-                                                                7.7,
-                                                                8.5),
-                                                        child: Column(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .end,
-                                                          children: [
-                                                            Container(
-                                                              margin: EdgeInsets
-                                                                  .fromLTRB(
-                                                                      0,
-                                                                      0,
-                                                                      0,
-                                                                      2.6),
-                                                              child: SizedBox(
-                                                                width: 74.1,
-                                                                child: Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .start,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    Container(
-                                                                      margin: EdgeInsets
-                                                                          .fromLTRB(
-                                                                              0,
-                                                                              2.6,
-                                                                              5.1,
-                                                                              0),
-                                                                      child:
-                                                                          Container(
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFFFE598),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(31.1),
-                                                                        ),
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              62.2,
-                                                                          height:
-                                                                              62.2,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    Container(
-                                                                      margin: EdgeInsets
-                                                                          .fromLTRB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              57.9),
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            6.8,
-                                                                        height:
-                                                                            6.8,
-                                                                        child: SvgPicture
-                                                                            .asset(
-                                                                          'assets/vectors/vector_212_x2.svg',
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              margin: EdgeInsets
-                                                                  .fromLTRB(
-                                                                      9.4,
-                                                                      0,
-                                                                      10.2,
-                                                                      0),
-                                                              child: Text(
-                                                                'Nama Saluran',
-                                                                style:
-                                                                    GoogleFonts
-                                                                        .getFont(
-                                                                  'Inter',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontSize: 10,
-                                                                  color: Color(
-                                                                      0xFF000000),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              margin: EdgeInsets
-                                                                  .fromLTRB(
-                                                                      0,
-                                                                      0,
-                                                                      0.9,
-                                                                      4.8),
-                                                              child: Align(
-                                                                alignment:
-                                                                    Alignment
-                                                                        .topCenter,
-                                                                child: Text(
-                                                                  'Status',
-                                                                  style: GoogleFonts
-                                                                      .getFont(
-                                                                    'Inter',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontSize: 7,
-                                                                    color: Color(
-                                                                        0xFF6D6D6D),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: Color(
-                                                                    0xFFF7D63A),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            85),
-                                                              ),
-                                                              child: Container(
-                                                                padding: EdgeInsets
-                                                                    .fromLTRB(
-                                                                        0.9,
-                                                                        4.3,
-                                                                        0,
-                                                                        3.3),
-                                                                child: Text(
-                                                                  'Gabung',
-                                                                  style: GoogleFonts
-                                                                      .getFont(
-                                                                    'Inter',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontSize:
-                                                                        10,
-                                                                    color: Color(
-                                                                        0xFFFFFFFF),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 11.1),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Color(0xFFFBBC05)),
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          color: Color(0xFFFFFFFF),
-                                        ),
-                                        child: Container(
-                                          padding: EdgeInsets.fromLTRB(
-                                              8.5, 7.7, 7.7, 8.5),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0, 2.6),
-                                                child: SizedBox(
-                                                  width: 74.1,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 2.6, 5.1, 0),
-                                                        child: Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0xFFFFE598),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        31.1),
-                                                          ),
-                                                          child: Container(
-                                                            width: 62.2,
-                                                            height: 62.2,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 0, 0, 57.9),
-                                                        child: SizedBox(
-                                                          width: 6.8,
-                                                          height: 6.8,
-                                                          child:
-                                                              SvgPicture.asset(
-                                                            'assets/vectors/vector_214_x2.svg',
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    9.4, 0, 10.2, 0),
-                                                child: Text(
-                                                  'Nama Saluran',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: Color(0xFF000000),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0.9, 4.8),
-                                                child: Align(
-                                                  alignment:
-                                                      Alignment.topCenter,
-                                                  child: Text(
-                                                    'Status',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 7,
-                                                      color: Color(0xFF6D6D6D),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF7D63A),
-                                                  borderRadius:
-                                                      BorderRadius.circular(85),
-                                                ),
-                                                child: Container(
-                                                  width: 86,
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      0.9, 4.3, 0, 3.3),
-                                                  child: Text(
-                                                    'Gabung',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 10,
-                                                      color: Color(0xFFFFFFFF),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Color(0xFFFBBC05)),
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          color: Color(0xFFFFFFFF),
-                                        ),
-                                        child: Container(
-                                          padding: EdgeInsets.fromLTRB(
-                                              8.5, 7.7, 7.7, 8.5),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0, 2.6),
-                                                child: SizedBox(
-                                                  width: 74.1,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 2.6, 5.1, 0),
-                                                        child: Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0xFFFFE598),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        31.1),
-                                                          ),
-                                                          child: Container(
-                                                            width: 62.2,
-                                                            height: 62.2,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0, 0, 0, 57.9),
-                                                        child: SizedBox(
-                                                          width: 6.8,
-                                                          height: 6.8,
-                                                          child:
-                                                              SvgPicture.asset(
-                                                            'assets/vectors/vector_25_x2.svg',
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    9.4, 0, 10.2, 0),
-                                                child: Text(
-                                                  'Nama Saluran',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: Color(0xFF000000),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 0, 0.9, 4.8),
-                                                child: Align(
-                                                  alignment:
-                                                      Alignment.topCenter,
-                                                  child: Text(
-                                                    'Status',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 7,
-                                                      color: Color(0xFF6D6D6D),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF7D63A),
-                                                  borderRadius:
-                                                      BorderRadius.circular(85),
-                                                ),
-                                                child: Container(
-                                                  width: 86,
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      0.9, 4.3, 0, 3.3),
-                                                  child: Text(
-                                                    'Gabung',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 10,
-                                                      color: Color(0xFFFFFFFF),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFFFFFFF),
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                        child: SizedBox(
-                                          width: 102.2,
-                                          child: Container(
-                                            padding: EdgeInsets.fromLTRB(
-                                                0, 74.9, 0, 28.8),
-                                            child: Stack(
-                                              clipBehavior: Clip.none,
-                                              children: [
-                                                Positioned(
-                                                  right: 19.6,
-                                                  top: 10.2,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFFFE598),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              31.1),
-                                                    ),
-                                                    child: Container(
-                                                      width: 62.2,
-                                                      height: 62.2,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'Nama Pengguna',
-                                                  textAlign: TextAlign.center,
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: Color(0xFF000000),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  bottom: 32.9,
-                                                  child: SizedBox(
-                                                    height: 8,
-                                                    child: Text(
-                                                      'Status',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 7,
-                                                        color:
-                                                            Color(0xFF6D6D6D),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  right: 7.7,
-                                                  bottom: 8.5,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFF7D63A),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              85),
-                                                    ),
-                                                    child: Container(
-                                                      width: 86,
-                                                      height: 19.6,
-                                                      padding:
-                                                          EdgeInsets.fromLTRB(
-                                                              0.9, 4.3, 0, 3.3),
-                                                      child: Text(
-                                                        'Follow',
-                                                        style:
-                                                            GoogleFonts.getFont(
-                                                          'Inter',
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontSize: 10,
-                                                          color:
-                                                              Color(0xFFFFFFFF),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  bottom: 0,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: Color(
-                                                              0xFFFBBC05)),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15),
-                                                      color: Color(0xFFFFFFFF),
-                                                    ),
-                                                    child: SizedBox(
-                                                      width: 102.2,
-                                                      height: 127.7,
-                                                      child: Container(
-                                                        padding:
-                                                            EdgeInsets.fromLTRB(
-                                                                8.5,
-                                                                7.7,
-                                                                7.7,
-                                                                8.5),
-                                                        child: Column(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .end,
-                                                          children: [
-                                                            Container(
-                                                              margin: EdgeInsets
-                                                                  .fromLTRB(
-                                                                      0,
-                                                                      0,
-                                                                      0,
-                                                                      2.6),
-                                                              child: SizedBox(
-                                                                width: 74.1,
-                                                                child: Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .start,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    Container(
-                                                                      margin: EdgeInsets
-                                                                          .fromLTRB(
-                                                                              0,
-                                                                              2.6,
-                                                                              5.1,
-                                                                              0),
-                                                                      child:
-                                                                          Container(
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFFFE598),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(31.1),
-                                                                        ),
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              62.2,
-                                                                          height:
-                                                                              62.2,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    Container(
-                                                                      margin: EdgeInsets
-                                                                          .fromLTRB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              57.9),
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            6.8,
-                                                                        height:
-                                                                            6.8,
-                                                                        child: SvgPicture
-                                                                            .asset(
-                                                                          'assets/vectors/vector_27_x2.svg',
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              margin: EdgeInsets
-                                                                  .fromLTRB(
-                                                                      9.4,
-                                                                      0,
-                                                                      10.2,
-                                                                      0),
-                                                              child: Text(
-                                                                'Nama Saluran',
-                                                                style:
-                                                                    GoogleFonts
-                                                                        .getFont(
-                                                                  'Inter',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontSize: 10,
-                                                                  color: Color(
-                                                                      0xFF000000),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              margin: EdgeInsets
-                                                                  .fromLTRB(
-                                                                      0,
-                                                                      0,
-                                                                      0.9,
-                                                                      4.8),
-                                                              child: Align(
-                                                                alignment:
-                                                                    Alignment
-                                                                        .topCenter,
-                                                                child: Text(
-                                                                  'Status',
-                                                                  style: GoogleFonts
-                                                                      .getFont(
-                                                                    'Inter',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontSize: 7,
-                                                                    color: Color(
-                                                                        0xFF6D6D6D),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: Color(
-                                                                    0xFFF7D63A),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            85),
-                                                              ),
-                                                              child: Container(
-                                                                padding: EdgeInsets
-                                                                    .fromLTRB(
-                                                                        0.9,
-                                                                        4.3,
-                                                                        0,
-                                                                        3.3),
-                                                                child: Text(
-                                                                  'Gabung',
-                                                                  style: GoogleFonts
-                                                                      .getFont(
-                                                                    'Inter',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontSize:
-                                                                        10,
-                                                                    color: Color(
-                                                                        0xFFFFFFFF),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Color(0xFFFBBC05)),
-                                        borderRadius: BorderRadius.circular(15),
-                                        color: Color(0xFFFFFFFF),
-                                      ),
-                                      child: Container(
-                                        padding: EdgeInsets.fromLTRB(
-                                            8.5, 7.7, 7.7, 8.5),
-                                        child: Stack(
-                                          clipBehavior: Clip.none,
-                                          children: [
-                                            Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Container(
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      11.9, 0, 0, 2.6),
-                                                  child: SizedBox(
-                                                    width: 74.1,
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .start,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Container(
-                                                          margin: EdgeInsets
-                                                              .fromLTRB(0, 2.6,
-                                                                  5.1, 0),
-                                                          child: Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0xFFFFE598),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          31.1),
-                                                            ),
-                                                            child: Container(
-                                                              width: 62.2,
-                                                              height: 62.2,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Container(
-                                                          margin: EdgeInsets
-                                                              .fromLTRB(0, 0, 0,
-                                                                  57.9),
-                                                          child: SizedBox(
-                                                            width: 6.8,
-                                                            height: 6.8,
-                                                            child: SvgPicture
-                                                                .asset(
-                                                              'assets/vectors/vector_22_x2.svg',
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      9.4, 0, 10.2, 12.7),
-                                                  child: Text(
-                                                    'Nama Saluran',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 10,
-                                                      color: Color(0xFF000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFF7D63A),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            85),
-                                                  ),
-                                                  child: Container(
-                                                    width: 86,
-                                                    padding:
-                                                        EdgeInsets.fromLTRB(
-                                                            0.9, 4.3, 0, 3.3),
-                                                    child: Text(
-                                                      'Gabung',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontSize: 10,
-                                                        color:
-                                                            Color(0xFFFFFFFF),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Positioned(
-                                              bottom: 24.4,
-                                              child: SizedBox(
-                                                height: 8,
-                                                child: Text(
-                                                  'Status',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 7,
-                                                    color: Color(0xFF6D6D6D),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Color(0xFFFBBC05)),
-                                        borderRadius: BorderRadius.circular(15),
-                                        color: Color(0xFFFFFFFF),
-                                      ),
-                                      child: Container(
-                                        padding: EdgeInsets.fromLTRB(
-                                            8.5, 7.7, 7.7, 8.5),
-                                        child: Stack(
-                                          clipBehavior: Clip.none,
-                                          children: [
-                                            Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Container(
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      11.9, 0, 0, 2.6),
-                                                  child: SizedBox(
-                                                    width: 74.1,
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .start,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Container(
-                                                          margin: EdgeInsets
-                                                              .fromLTRB(0, 2.6,
-                                                                  5.1, 0),
-                                                          child: Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0xFFFFE598),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          31.1),
-                                                            ),
-                                                            child: Container(
-                                                              width: 62.2,
-                                                              height: 62.2,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Container(
-                                                          margin: EdgeInsets
-                                                              .fromLTRB(0, 0, 0,
-                                                                  57.9),
-                                                          child: SizedBox(
-                                                            width: 6.8,
-                                                            height: 6.8,
-                                                            child: SvgPicture
-                                                                .asset(
-                                                              'assets/vectors/vector_211_x2.svg',
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      9.4, 0, 10.2, 12.7),
-                                                  child: Text(
-                                                    'Nama Saluran',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 10,
-                                                      color: Color(0xFF000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFF7D63A),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            85),
-                                                  ),
-                                                  child: Container(
-                                                    width: 86,
-                                                    padding:
-                                                        EdgeInsets.fromLTRB(
-                                                            0.9, 4.3, 0, 3.3),
-                                                    child: Text(
-                                                      'Gabung',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontSize: 10,
-                                                        color:
-                                                            Color(0xFFFFFFFF),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Positioned(
-                                              bottom: 24.4,
-                                              child: SizedBox(
-                                                height: 8,
-                                                child: Text(
-                                                  'Status',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 7,
-                                                    color: Color(0xFF6D6D6D),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFFFFFFF),
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: SizedBox(
-                                        width: 102.2,
-                                        child: Container(
-                                          padding: EdgeInsets.fromLTRB(
-                                              0, 74.9, 0, 28.8),
-                                          child: Stack(
-                                            clipBehavior: Clip.none,
-                                            children: [
-                                              Positioned(
-                                                right: 19.6,
-                                                top: 10.2,
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFFFE598),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            31.1),
-                                                  ),
-                                                  child: Container(
-                                                    width: 62.2,
-                                                    height: 62.2,
-                                                  ),
-                                                ),
-                                              ),
-                                              Text(
-                                                'Nama Pengguna',
-                                                textAlign: TextAlign.center,
-                                                style: GoogleFonts.getFont(
-                                                  'Inter',
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 10,
-                                                  color: Color(0xFF000000),
-                                                ),
-                                              ),
-                                              Positioned(
-                                                bottom: 32.9,
-                                                child: SizedBox(
-                                                  height: 8,
-                                                  child: Text(
-                                                    'Status',
-                                                    style: GoogleFonts.getFont(
-                                                      'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 7,
-                                                      color: Color(0xFF6D6D6D),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Positioned(
-                                                right: 7.7,
-                                                bottom: 8.5,
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFF7D63A),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            85),
-                                                  ),
-                                                  child: Container(
-                                                    width: 86,
-                                                    height: 19.6,
-                                                    padding:
-                                                        EdgeInsets.fromLTRB(
-                                                            0.9, 4.3, 0, 3.3),
-                                                    child: Text(
-                                                      'Follow',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontSize: 10,
-                                                        color:
-                                                            Color(0xFFFFFFFF),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Positioned(
-                                                bottom: 0,
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(
-                                                        color:
-                                                            Color(0xFFFBBC05)),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15),
-                                                    color: Color(0xFFFFFFFF),
-                                                  ),
-                                                  child: SizedBox(
-                                                    width: 102.2,
-                                                    height: 127.7,
-                                                    child: Container(
-                                                      padding:
-                                                          EdgeInsets.fromLTRB(
-                                                              8.5,
-                                                              7.7,
-                                                              7.7,
-                                                              8.5),
-                                                      child: Stack(
-                                                        clipBehavior: Clip.none,
-                                                        children: [
-                                                          SizedBox(
-                                                            width:
-                                                                double.infinity,
-                                                            child: Column(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .start,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Container(
-                                                                  margin: EdgeInsets
-                                                                      .fromLTRB(
-                                                                          11.9,
-                                                                          0,
-                                                                          0,
-                                                                          2.6),
-                                                                  child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            Container(
-                                                                          margin: EdgeInsets.fromLTRB(
-                                                                              0,
-                                                                              2.6,
-                                                                              5.1,
-                                                                              0),
-                                                                          child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: Color(0xFFFFE598),
-                                                                              borderRadius: BorderRadius.circular(31.1),
-                                                                            ),
-                                                                            child:
-                                                                                Container(
-                                                                              height: 62.2,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Container(
-                                                                        margin: EdgeInsets.fromLTRB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            57.9),
-                                                                        child:
-                                                                            SizedBox(
-                                                                          width:
-                                                                              6.8,
-                                                                          height:
-                                                                              6.8,
-                                                                          child:
-                                                                              SvgPicture.asset(
-                                                                            'assets/vectors/vector_215_x2.svg',
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Container(
-                                                                  margin: EdgeInsets
-                                                                      .fromLTRB(
-                                                                          9.4,
-                                                                          0,
-                                                                          10.2,
-                                                                          12.7),
-                                                                  child: Text(
-                                                                    'Nama Saluran',
-                                                                    style: GoogleFonts
-                                                                        .getFont(
-                                                                      'Inter',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                      fontSize:
-                                                                          10,
-                                                                      color: Color(
-                                                                          0xFF000000),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: Color(
-                                                                        0xFFF7D63A),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            85),
-                                                                  ),
-                                                                  child:
-                                                                      Container(
-                                                                    padding: EdgeInsets
-                                                                        .fromLTRB(
-                                                                            0.9,
-                                                                            4.3,
-                                                                            0,
-                                                                            3.3),
-                                                                    child: Text(
-                                                                      'Gabung',
-                                                                      style: GoogleFonts
-                                                                          .getFont(
-                                                                        'Inter',
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                        fontSize:
-                                                                            10,
-                                                                        color: Color(
-                                                                            0xFFFFFFFF),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                          Positioned(
-                                                            bottom: 24.4,
-                                                            child: SizedBox(
-                                                              height: 8,
-                                                              child: Text(
-                                                                'Status',
-                                                                style:
-                                                                    GoogleFonts
-                                                                        .getFont(
-                                                                  'Inter',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontSize: 7,
-                                                                  color: Color(
-                                                                      0xFF6D6D6D),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 0, 8.9),
-                            child: SizedBox(
-                              width: 327,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 0, 7.9, 0),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFD9D9D9),
-                                            borderRadius:
-                                                BorderRadius.circular(21),
-                                          ),
-                                          child: Container(
-                                            width: 42.1,
-                                            height: 42.1,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(60),
-                                                image: DecorationImage(
-                                                  fit: BoxFit.cover,
-                                                  image: AssetImage(
-                                                    'assets/images/snapchat_6849558421.jpeg',
-                                                  ),
-                                                ),
-                                              ),
-                                              child: Container(
-                                                width: 42.1,
-                                                height: 42.1,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 4, 0, 6.1),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              margin: EdgeInsets.fromLTRB(
-                                                  0, 0, 0, 2),
-                                              child: Text(
-                                                'Chandrakant Sahu',
-                                                style: GoogleFonts.getFont(
-                                                  'Inter',
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 14,
-                                                  height: 1.2,
-                                                  color: Color(0xFF000000),
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.fromLTRB(
-                                                  1, 0, 1, 0),
-                                              child: Align(
-                                                alignment: Alignment.topLeft,
-                                                child: Text(
-                                                  '68rb Pengikut',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 11,
-                                                    height: 1.2,
-                                                    color: Color(0xFF000000),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.fromLTRB(0, 12, 0, 10.5),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFFBBC05),
-                                        borderRadius: BorderRadius.circular(85),
-                                      ),
-                                      child: Container(
-                                        width: 86,
-                                        padding:
-                                            EdgeInsets.fromLTRB(1, 3, 0, 4.6),
-                                        child: Text(
-                                          'Ikuti',
-                                          style: GoogleFonts.getFont(
-                                            'Inter',
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 10,
-                                            color: Color(0xFFFFFFFF),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 327,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.fromLTRB(0, 0, 7.9, 0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFD9D9D9),
-                                          borderRadius:
-                                              BorderRadius.circular(21),
-                                        ),
-                                        child: Container(
-                                          width: 42.1,
-                                          height: 42.1,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              color: Color(0x060B141A),
-                                              borderRadius:
-                                                  BorderRadius.circular(60),
-                                            ),
-                                            child: Container(
-                                              width: 42.1,
-                                              height: 42.1,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.fromLTRB(0, 4, 0, 6.1),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            margin:
-                                                EdgeInsets.fromLTRB(0, 0, 0, 2),
-                                            child: Text(
-                                              'MissingContact',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 14,
-                                                height: 1.2,
-                                                color: Color(0xFF000000),
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
-                                            margin:
-                                                EdgeInsets.fromLTRB(1, 0, 1, 0),
-                                            child: Align(
-                                              alignment: Alignment.topLeft,
-                                              child: Text(
-                                                '250rb Pengikut',
-                                                style: GoogleFonts.getFont(
-                                                  'Inter',
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 11,
-                                                  height: 1.2,
-                                                  color: Color(0xFF000000),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 12, 0, 10.5),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFFBBC05),
-                                      borderRadius: BorderRadius.circular(85),
-                                    ),
-                                    child: Container(
-                                      width: 86,
-                                      padding:
-                                          EdgeInsets.fromLTRB(1, 3, 0, 4.6),
-                                      child: Text(
-                                        'Ikuti',
-                                        style: GoogleFonts.getFont(
-                                          'Inter',
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 10,
-                                          color: Color(0xFFFFFFFF),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+          _buildSaluranItem(context, 'Saluran 1', '', 'Nama Saluran'),
+          _buildSaluranItem(context, 'Saluran 2', '', 'Nama Saluran', time: ''),
+          Divider(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Temukan saluran untuk diikuti',
+                style: GoogleFonts.inter(color: Colors.grey)),
           ),
+          _buildSaluranItem(context, 'Saluran 3', '', 'Nama Saluran',
+              actionText: 'Ikuti'),
+          _buildSaluranItem(context, 'Saluran 4', '', 'Nama Saluran',
+              actionText: 'Ikuti'),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSaluranItem(
+      BuildContext context, String title, String subtitle, String originalTitle,
+      {String time = '', String actionText = ''}) {
+    return ListTile(
+      leading: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Image.asset('', width: 40, height: 40, fit: BoxFit.cover),
           Positioned(
-            top: -22,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFFFBBC05),
-              ),
-              child: Container(
-                width: 360,
-                height: 60,
-              ),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.fromLTRB(27, 22, 28, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 10,
-                  height: 20,
-                  child: SvgPicture.asset(
-                    'assets/vectors/vector_13_x2.svg',
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 1),
-                  child: Text(
-                    'Saluran',
-                    style: GoogleFonts.getFont(
-                      'Inter',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0.4),
-                  child: SizedBox(
-                    width: 59,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 18, 0),
-                          width: 20,
-                          height: 19.6,
-                          child: SizedBox(
-                            width: 20,
-                            height: 19.6,
-                            child: SvgPicture.asset(
-                              'assets/vectors/vector_8_x2.svg',
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 1.6, 0, 0),
-                          child: SizedBox(
-                            width: 21,
-                            height: 18,
-                            child: SvgPicture.asset(
-                              'assets/vectors/xmlid_1013_x2.svg',
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+            bottom: -10,
+            right: -10,
+            child: IconButton(
+              icon: Icon(Icons.camera_alt, color: Colors.white, size: 20),
+              onPressed: () {
+                _showPhotoUpdateDialog(context);
+              },
             ),
           ),
         ],
       ),
+      title: Text(title, style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
+      subtitle: Text(subtitle, style: GoogleFonts.inter(color: Colors.grey)),
+      trailing: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          if (time.isNotEmpty)
+            Text(time,
+                style: GoogleFonts.inter(color: Colors.grey, fontSize: 12)),
+          if (actionText.isNotEmpty)
+            Text(actionText,
+                style: GoogleFonts.inter(
+                    color: const Color.fromARGB(255, 255, 214, 64))),
+        ],
+      ),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    DetailScreen(title: title, originalTitle: originalTitle)));
+      },
+    );
+  }
+
+  void _showPhotoUpdateDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Pilih Foto', style: GoogleFonts.inter()),
+          content: Text('Pilih foto dari galeri atau ambil foto baru.',
+              style: GoogleFonts.inter()),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Pilih dari Galeri',
+                  style: GoogleFonts.inter(
+                      color: const Color.fromARGB(255, 255, 214, 92))),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Ambil Foto Baru',
+                  style: GoogleFonts.inter(
+                      color: const Color.fromARGB(255, 175, 155, 76))),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _handleNotifications(BuildContext context) {
+    setState(() {
+      isNotificationEnabled =
+          !isNotificationEnabled; // Toggle the notification status
+    });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(isNotificationEnabled
+            ? 'Notifikasi dihidupkan'
+            : 'Notifikasi dimatikan'),
+      ),
+    );
+  }
+}
+
+class DetailScreen extends StatelessWidget {
+  final String title;
+  final String originalTitle;
+
+  DetailScreen({required this.title, required this.originalTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(originalTitle,
+            style: GoogleFonts.inter(fontWeight: FontWeight.w500)),
+        actions: [
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) => [
+              PopupMenuItem(
+                child: Text('Info Saluran'),
+                value: 'info_saluran',
+              ),
+              PopupMenuItem(
+                child: Text('Batal Mengikuti'),
+                value: 'batal_mengikuti',
+              ),
+              PopupMenuItem(
+                child: Text('Bagikan'),
+                value: 'bagikan',
+              ),
+              PopupMenuItem(
+                child: Text('Laporkan'),
+                value: 'laporkan',
+              ),
+            ],
+            onSelected: (value) {
+              _handleDetailPopupSelection(context, value);
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child:
+            Text('Detail dari $title', style: GoogleFonts.inter(fontSize: 18)),
+      ),
+    );
+  }
+
+  void _handleDetailPopupSelection(BuildContext context, String value) {
+    switch (value) {
+      case 'info_saluran':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => InfoSaluranScreen(),
+          ),
+        );
+        break;
+      case 'batal_mengikuti':
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Batal Mengikuti dipilih'),
+          ),
+        );
+        break;
+      case 'bagikan':
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Bagikan dipilih'),
+          ),
+        );
+        break;
+      case 'laporkan':
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Laporkan dipilih'),
+          ),
+        );
+        break;
+    }
+  }
+}
+
+class InfoSaluranScreen extends StatefulWidget {
+  @override
+  _InfoSaluranScreenState createState() => _InfoSaluranScreenState();
+}
+
+class _InfoSaluranScreenState extends State<InfoSaluranScreen> {
+  bool isFollowing = true;
+  bool isNotificationMuted = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Info Saluran', style: GoogleFonts.inter()),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage(''),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Nama Saluran',
+              style: GoogleFonts.inter(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'keterangan pengikut',
+              style: GoogleFonts.inter(
+                color: const Color.fromARGB(255, 233, 187, 1),
+              ),
+            ),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    _showUnfollowDialog(context);
+                  },
+                  icon: Icon(isFollowing ? Icons.check : Icons.add),
+                  label: Text(isFollowing ? 'Mengikuti' : 'Ikuti'),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      isNotificationMuted = !isNotificationMuted;
+                    });
+                  },
+                  icon: Icon(isNotificationMuted
+                      ? Icons.notifications_off
+                      : Icons.notifications),
+                  label: Text(isNotificationMuted
+                      ? 'Nyalakan Notifikasi'
+                      : 'Bisukan Notifikasi'),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            ListTile(
+              leading: Icon(isNotificationMuted
+                  ? Icons.notifications_off
+                  : Icons.notifications),
+              title: Text(isNotificationMuted
+                  ? 'Nyalakan notifikasi'
+                  : 'Bisukan notifikasi'),
+              trailing: Switch(
+                value: !isNotificationMuted,
+                onChanged: (bool value) {
+                  setState(() {
+                    isNotificationMuted = !value;
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.cancel),
+              title: Text(
+                  isFollowing ? 'Batal Mengikuti Saluran' : 'Ikuti Saluran'),
+              onTap: () {
+                _showUnfollowDialog(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.report),
+              title: Text('Laporkan Saluran'),
+              onTap: () {
+                _showReportDialog(context);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showUnfollowDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Konfirmasi', style: GoogleFonts.inter()),
+          content: Text(
+              'Anda yakin ingin ${isFollowing ? "batal mengikuti" : "mengikuti"} "Nama Saluran"?',
+              style: GoogleFonts.inter()),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+              },
+              child: Text('Batal',
+                  style: GoogleFonts.inter(
+                      color: const Color.fromARGB(255, 255, 214, 92))),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+                setState(() {
+                  isFollowing = !isFollowing; // Toggle follow status
+                });
+              },
+              child: Text(isFollowing ? 'Batal Mengikuti' : 'Ikuti',
+                  style: GoogleFonts.inter(
+                      color: const Color.fromARGB(255, 175, 155, 76))),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showReportDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Laporkan Saluran', style: GoogleFonts.inter()),
+          content: Text('Apakah Anda yakin ingin melaporkan saluran ini?',
+              style: GoogleFonts.inter()),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+              },
+              child: Text('Batal',
+                  style: GoogleFonts.inter(
+                      color: const Color.fromARGB(255, 255, 214, 92))),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Terlaporkan'),
+                  ),
+                );
+              },
+              child: Text('Laporkan',
+                  style: GoogleFonts.inter(
+                      color: const Color.fromARGB(255, 175, 155, 76))),
+            ),
+          ],
+        );
+      },
     );
   }
 }
